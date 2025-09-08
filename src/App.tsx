@@ -1,15 +1,16 @@
-import React from 'react'
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import Navbar from './components/Navbar';
+import React from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
 
 const App = () => {
   return (
     <div>
       <Navbar />
-      <div className='bg-red-300'>App</div>
+      <Hero />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
