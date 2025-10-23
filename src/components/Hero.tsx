@@ -1,4 +1,3 @@
-import React from "react";
 import Button from "./Button";
 import HeroForm from "./HeroForm";
 function Hero() {
@@ -32,20 +31,13 @@ function Hero() {
           </p>
           <div>
             <Button text="Book Your Ride" />
-            <p
-              className="mt-4 text-sm text-gray-300"
-              data-aos="fade-up"
-              data-aos-delay="400"
-            >
-              Experience the best car rental service with us.
-            </p>
           </div>
         </div>
         <div
           className="mt-8 lg:mt-0 flex-1 flex justify-center"
           data-aos="zoom-in-left"
         >
-          <img src="/hero.png" alt="car" className="w-full max-w-lg" />
+          <img src="/hero.png" alt="car" className="w-full max-w-4xl" />
         </div>
       </div>
       {/* form section */}

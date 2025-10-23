@@ -1,13 +1,15 @@
-import React, { useEffect, useRef } from "react";
+import { useRef } from "react";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import {
+  SiAudi,
   SiBmw,
+  SiChevrolet,
   SiFord,
+  SiHyundai,
   SiMercedes,
   SiTesla,
   SiVolkswagen,
 } from "react-icons/si";
-import { Link } from "react-router-dom";
-import gsap from "gsap";
 
 const brands = [
   { name: "BMW", icon: <SiBmw /> },
@@ -15,63 +17,66 @@ const brands = [
   { name: "Ford", icon: <SiFord /> },
   { name: "Volkswagen", icon: <SiVolkswagen /> },
   { name: "Tesla", icon: <SiTesla /> },
+  { name: "Audi", icon: <SiAudi /> },
+  { name: "Chevrolet", icon: <SiChevrolet /> },
+  { name: "Hyundai", icon: <SiHyundai /> },
+  { name: "Hyundai", icon: <SiHyundai /> },
+  { name: "Hyundai", icon: <SiHyundai /> },
+  { name: "Hyundai", icon: <SiHyundai /> },
 ];
-
 function Brands() {
-  const brandRef = useRef(null);
+  const brandRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        ".brand-item",
-        { xPercent: 0 },
-        {
-          xPercent: -100 * brands.length,
-          duration: 10,
-          ease: "linear",
-          repeat: -1,
-        }
-      );
-    }, brandRef);
+  const scrollLeft = () => {
+    brandRef.current?.scrollBy({ left: -300, behavior: "smooth" });
+  };
 
-    return () => ctx.revert();
-  }, []);
+  const scrollRight = () => {
+    brandRef.current?.scrollBy({ left: 300, behavior: "smooth" });
+  };
 
   return (
-    <section
-      className="bg-[#f9fafb] py-14 px-5 lg:px-14"
-      data-aos="fade-up"
-      data-aos-delay="200"
-    >
-      <div className="max-w-[1300px] mx-auto">
-        <div className="flex items-center justify-between">
-          <h2 className="text-2xl font-semibold">
-            Explore Our <span className="text-blue-600">Premium Brands</span>
-          </h2>
-          <Link to="/brands">View All Brands</Link>
-        </div>
-
-        {/* Brands car */}
-        <div className="overflow-hidden mt-10">
-          <div ref={brandRef} className="flex gap-6 w-max">
-            {brands.concat(brands).map((brand, index) => (
-              <div
-                key={index}
-                className="brand-item flex flex-col items-center justify-center 
-             gap-3 min-w-[160px] h-[120px] border-none
-             bg-white shadow-sm 
-             hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer"
-              >
-                <div className="text-5xl text-blue-600">{brand.icon}</div>
-                <h3 className="text-base font-semibold text-gray-700">
-                  {brand.name}
-                </h3>
-              </div>
-            ))}
-          </div>
-        </div>
+    <div className=" max-w-[1300px] mx-auto my-2 overflow-hidden scrollbar-hide py-12 w-max" data-aos="fade-up" data-aos-delay="200">
+      {/* Brand Head */}
+      <div>
+        <h2 className=" text-2xl font-semibold text-center">
+          Explore Our <span className=" text-blue-600">Premium Brands</span>
+        </h2>
       </div>
-    </section>
+      {/* Brand List */}
+      <div className=" flex relative mt-4 items-center gap-3  ">
+        {/* Left */}
+        <button
+          onClick={scrollLeft}
+          className=" absolute w-10 h-10 flex items-center justify-center cursor-pointer text-blue-300 border rounded-full hover:bg-blue-600 transition duration-300 hover:text-white"
+        >
+          <FaChevronLeft />
+        </button>
+        {/* List */}
+        <div
+          className=" flex gap-8 text-blue-600 overflow-x-auto scrollbar-hide"
+          ref={brandRef}
+        >
+          {brands.map((brand, index) => (
+            <div
+              key={index}
+              className="min-w-[160px] h-30 flex flex-col items-center justify-center border gap-3 
+             bg-white shadow-sm hover:shadow-lg"
+            >
+              <div className="text-4xl text-blue-600">{brand.icon}</div>
+              <h3 className="text-gray-800">{brand.name}</h3>
+            </div>
+          ))}
+        </div>
+        {/* Right */}
+        <button
+          onClick={scrollRight}
+          className="absolute w-10 h-10 flex items-center justify-center cursor-pointer text-blue-300 border rounded-full hover:bg-blue-600 transition duration-300 hover:text-white right-0"
+        >
+          <FaChevronRight />
+        </button>
+      </div>
+    </div>
   );
 }
 

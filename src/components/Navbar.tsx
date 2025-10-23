@@ -4,13 +4,12 @@ import {
   SignInButton,
   UserButton,
 } from "@clerk/clerk-react";
-import React from "react";
 import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <header className="flex justify-between items-center px-5 py-3.5 lg:px-14">
       <div>
-        <img className="h-26" src="/logo.png" alt="logo" />
+        <img className="h-10 p-1 ml-10" src="https://pixydrops.com/remons/assets/img/logo/black-logo.svg" alt="logo" />
       </div>
       <nav className=" hidden lg:flex gap-8">
         <Link
