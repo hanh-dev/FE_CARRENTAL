@@ -11,6 +11,24 @@ import { BiSolidQuoteAltLeft } from "react-icons/bi";
 import Footer from "./components/Footer";
 
 const App = () => {
+  const reviews = [
+    {
+      name: "Son Tung MTP",
+      text: "I was impressed by how smooth the whole process was. The car was spotless, the staff were incredibly friendly, and pickup took less than five minutes. Definitely the best car rental experience I’ve ever had!",
+      image: "./sontung.png",
+    },
+    {
+      name: "Lisa",
+      text: "Everything was quick and easy, car was perfect and staff super kind.",
+      image: "./lisa.png",
+    },
+    {
+      name: "John Doe",
+      text: "One of the best rental experiences ever. Will definitely use again!",
+      image: "./john.png",
+    },
+  ];
+  const duplicated = [...reviews, ...reviews];
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -94,92 +112,48 @@ const App = () => {
         </div>
       </div>
       {/* Latest News */}
-      <div className=" max-w-[1300px] mx-auto">
-        <h2 className=" text-center text-4xl font-semibold">
-          What They are Talking{" "}
-          <span className=" text-blue-600">About Remons</span>
+      <div className="max-w-[1300px] mx-auto mt-10">
+        <h2 className="text-center text-4xl font-semibold">
+          What They're Talking{" "}
+          <span className="text-blue-600">About Remons</span>
         </h2>
-        <div className=" grid grid-cols-3 gap-12 mt-10">
-          {/* 1 */}
-          <div className="h-[300px] p-10 bg-white border border-gray-200 rounded-[10px] shadow-md">
-            <div className=" relative">
-              {/* icon */}
-              <div className=" absolute w-[50px] h-[50px] flex justify-center items-center rounded-full bg-blue-600 top-[-62px] left-[44%] mb-10">
-                <BiSolidQuoteAltLeft className=" text-2xl text-white" />
+
+        <div className="scroll-wrapper mt-12">
+          <div className="scroll-track">
+            {duplicated.map((r, index) => (
+              <div
+                key={index}
+                className="max-w-[350px] h-[300px] p-4 bg-white border border-gray-200 rounded-[10px] shadow-lg flex flex-col justify-between"
+              >
+                <div className="relative">
+                  <div className="absolute w-[60px] h-[60px] flex justify-center items-center rounded-full bg-blue-600 top-[-50px] left-1/2 -translate-x-1/2 ">
+                    <BiSolidQuoteAltLeft className="text-2xl text-white" />
+                  </div>
+                  <p className="text-gray-700 text-sm mt-10 text-center">
+                    {r.text}
+                  </p>
+                  <div className="flex gap-2 text-orange-400 mt-4 justify-center">
+                    {[...Array(5)].map((_, i) => (
+                      <FaStar key={i} />
+                    ))}
+                  </div>
+                </div>
+
+                <div className="flex gap-4 mt-4 items-center justify-center">
+                  <div className="h-14 w-14 ring-2 ring-amber-300 rounded-full overflow-hidden">
+                    <img
+                      src={r.image}
+                      alt={r.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="flex flex-col text-center">
+                    <span className="font-semibold">{r.name}</span>
+                    <span className="text-gray-500 text-sm">Customer</span>
+                  </div>
+                </div>
               </div>
-              {/* content and stars */}
-              <span className=" mt-8">
-                I was impressed by how smooth the whole process was. The car was
-                spotless, the staff were incredibly friendly, and pickup took
-                less than five minutes. Definitely the best car rental
-                experience I’ve ever had!"
-              </span>
-              <div className=" flex gap-2 text-orange-400 mt-4 justify-center">
-                <FaStar />
-                <FaStar />
-                <FaStar />
-                <FaStar />
-                <FaStar />
-              </div>
-            </div>
-            {/* Bottom */}
-            <div>
-              {/* Image */}
-              <div></div>
-              {/* Info */}
-              <div></div>
-            </div>
-          </div>
-          {/* 2 */}
-          <div className="bg-amber-400">
-            <div>
-              {/* icon */}
-              <div></div>
-              {/* content and stars */}
-              <span>I was impressed</span>
-              <div></div>
-            </div>
-            {/* Bottom */}
-            <div>
-              {/* Image */}
-              <div></div>
-              {/* Info */}
-              <div></div>
-            </div>
-          </div>
-          {/* 3 */}
-          <div className="bg-amber-400">
-            <div>
-              {/* icon */}
-              <div></div>
-              {/* content and stars */}
-              <span>I was impressed</span>
-              <div></div>
-            </div>
-            {/* Bottom */}
-            <div>
-              {/* Image */}
-              <div></div>
-              {/* Info */}
-              <div></div>
-            </div>
-          </div>
-          {/* 4 */}
-          <div className="bg-amber-400">
-            <div>
-              {/* icon */}
-              <div></div>
-              {/* content and stars */}
-              <span>I was impressed</span>
-              <div></div>
-            </div>
-            {/* Bottom */}
-            <div>
-              {/* Image */}
-              <div></div>
-              {/* Info */}
-              <div></div>
-            </div>
+            ))}
           </div>
         </div>
       </div>

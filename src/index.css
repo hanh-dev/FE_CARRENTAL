@@ -5,3 +5,23 @@ body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
 }
+.scroll-wrapper {
+  overflow: visible;
+  width: 100%;
+}
+
+.scroll-track {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  animation: scrollLeft 40s linear infinite;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
