@@ -43,7 +43,7 @@ const App = () => {
       <PopularCars />
       {/* Why should you choose us */}
       <div className="max-w-[1300px] mx-auto px-4 mb-10">
-        <h2 className="text-center text-4xl font-semibold my-8">
+        <h2 className="text-center text-4xl font-semibold mb-8">
           Why Should You <span className="text-blue-600">Choose Us?</span>
         </h2>
         <div className=" grid grid-cols-3 gap-10">
