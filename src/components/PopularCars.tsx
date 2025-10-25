@@ -1,11 +1,15 @@
 import CarCard from "./CarCard";
 import toyota from "/toyota.png";
 import bmw from "/bmw.png";
+import rollroy from "/rollroy.png"
+import f1n from "/f1n.png"
+import f1n2 from "/f1n2.png"
+import excar from "/excar.png"
 const cars = [
   {
     name: "Toyota Land Cruiser",
     desc: "A powerful SUV",
-    image: toyota,
+    image: rollroy,
     price: "$85,000",
     rating: 4.8,
     infor: { door: 2, suitcase: 1, passengers: 3 },
@@ -13,7 +17,7 @@ const cars = [
   {
     name: "Nissan GTR Turbo",
     desc: "Compact car available as sedan hatchback, renowned for its all-wheel-drive",
-    image: toyota,
+    image: f1n,
     price: "$85,000",
     rating: 4.8,
     infor: { door: 2, suitcase: 1, passengers: 3 },
@@ -29,7 +33,7 @@ const cars = [
   {
     name: "Toyota Land Cruiser",
     desc: "A powerful SUV",
-    image: toyota,
+    image: f1n2,
     price: "$85,000",
     rating: 4.8,
     infor: { door: 2, suitcase: 1, passengers: 3 },
@@ -37,7 +41,7 @@ const cars = [
   {
     name: "Toyota Land Cruiser",
     desc: "A powerful SUV",
-    image: toyota,
+    image: excar,
     price: "$85,000",
     rating: 4.8,
     infor: { door: 2, suitcase: 1, passengers: 3 },
@@ -45,9 +49,9 @@ const cars = [
 ];
 function PopularCars() {
   return (
-    <section className="bg-[#f9fafb]">
+    <section className="">
       <div className=" max-w-[1300px] m-auto">
-        <h2 className=" text-2xl font-semibold my-4 text-center">
+        <h2 className=" text-4xl font-semibold my-4 text-center">
           Most <span className=" text-blue-600">Popular Cars</span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

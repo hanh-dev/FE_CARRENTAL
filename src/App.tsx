@@ -112,13 +112,13 @@ const App = () => {
         </div>
       </div>
       {/* Latest News */}
-      <div className="max-w-[1300px] mx-auto mt-10">
+      <div className="max-w-[1300px] mx-auto mt-10 mb-10">
         <h2 className="text-center text-4xl font-semibold">
           What They're Talking{" "}
           <span className="text-blue-600">About Remons</span>
         </h2>
 
-        <div className="scroll-wrapper mt-12">
+        <div className="scroll-wrapper mt-15">
           <div className="scroll-track">
             {duplicated.map((r, index) => (
               <div
