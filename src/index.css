@@ -17,6 +17,11 @@ body {
   animation: scrollLeft 40s linear infinite;
 }
 
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+
 @keyframes scrollLeft {
   0% {
     transform: translateX(0);

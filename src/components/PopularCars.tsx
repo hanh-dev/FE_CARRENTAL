@@ -1,5 +1,4 @@
 import CarCard from "./CarCard";
-import toyota from "/toyota.png";
 import bmw from "/bmw.png";
 import rollroy from "/rollroy.png"
 import f1n from "/f1n.png"

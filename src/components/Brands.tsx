@@ -36,15 +36,15 @@ function Brands() {
   };
 
   return (
-    <div className=" max-w-[1300px] mx-auto my-2 overflow-hidden scrollbar-hide py-12 w-max" data-aos="fade-up" data-aos-delay="200">
+    <div className=" max-w-[1300px] mx-auto my-2 overflow-hidden scrollbar-hide py-8 w-max" data-aos="fade-up" data-aos-delay="200">
       {/* Brand Head */}
       <div>
-        <h2 className=" text-2xl font-semibold text-center">
+        <h2 className=" text-4xl font-semibold text-center">
           Explore Our <span className=" text-blue-600">Premium Brands</span>
         </h2>
       </div>
       {/* Brand List */}
-      <div className=" flex relative mt-4 items-center gap-3  ">
+      <div className=" flex relative mt-8 items-center gap-3  ">
         {/* Left */}
         <button
           onClick={scrollLeft}
@@ -60,8 +60,8 @@ function Brands() {
           {brands.map((brand, index) => (
             <div
               key={index}
-              className="min-w-[160px] h-30 flex flex-col items-center justify-center border gap-3 
-             bg-white shadow-sm hover:shadow-lg"
+              className="min-w-[180px] h-40 flex flex-col items-center justify-center gap-3 
+             bg-white shadow-sm hover:shadow-lg border border-[2px] rounded-[2px]"
             >
               <div className="text-4xl text-blue-600">{brand.icon}</div>
               <h3 className="text-gray-800">{brand.name}</h3>

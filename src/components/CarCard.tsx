@@ -1,5 +1,5 @@
 import { GiCarDoor } from "react-icons/gi";
-import { FaChair, FaStar } from "react-icons/fa";
+import { FaStar } from "react-icons/fa";
 import { BsSuitcase, BsPersonCheckFill} from "react-icons/bs";
 function CarCard({
   car,
